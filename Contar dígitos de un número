@@ -1,0 +1,14 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n, cont = 0;
+    cout << "Ingresa un numero: ";
+    cin >> n;
+    while(n != 0){
+        cont++;
+        n /= 10;
+    }
+    cout << "Cantidad de digitos: " << cont << endl;
+    return 0;
+}

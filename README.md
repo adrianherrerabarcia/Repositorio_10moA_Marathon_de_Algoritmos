@@ -1,1 +1,0 @@
-# Repositorio_10moA_Marathon_de_Algoritmos
