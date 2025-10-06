@@ -1,0 +1,14 @@
+#include <iostream>
+using namespace std;
+
+int invertir(int n, int inv = 0) {
+    if (n == 0) return inv;
+    return invertir(n / 10, inv * 10 + n % 10);
+}
+
+int main() {
+    int n;
+    cout << "Ingrese un numero: ";
+    cin >> n;
+    cout << "Numero invertido: " << invertir(n);
+}
