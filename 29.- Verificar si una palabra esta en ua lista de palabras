@@ -1,0 +1,15 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main(){
+    string palabras[] = {"perro","gato","pez","loro"};
+    string buscar;
+    bool encontrado=false;
+    cout<<"Ingrese palabra: ";
+    cin>>buscar;
+    for(string p : palabras)
+        if(p==buscar) encontrado=true;
+    if(encontrado) cout<<"Palabra encontrada.";
+    else cout<<"No encontrada.";
+}
