@@ -1,0 +1,21 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+
+int main(){
+    ofstream out("nombres.txt");
+    string nombre;
+    cout<<"Ingrese 3 nombres:\n";
+    for(int i=0;i<3;i++){
+        cin>>nombre;
+        out<<nombre<<endl;
+    }
+    out.close();
+
+    ifstream in("nombres.txt");
+    cout<<"\nContenido del archivo:\n";
+    while(getline(in,nombre))
+        cout<<nombre<<endl;
+    in.close();
+}
