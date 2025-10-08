@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+
+struct Producto {
+    string nombre;
+    float precio;
+    int cantidad;
+};
+
+int main(){
+    Producto p;
+    cout<<"Nombre: ";
+    cin>>p.nombre;
+    cout<<"Precio: ";
+    cin>>p.precio;
+    cout<<"Cantidad: ";
+    cin>>p.cantidad;
+    cout<<"\nProducto "<<p.nombre<<" total: "<<p.precio*p.cantidad;
+}
