@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+
+struct Alumno {
+    string nombre;
+    float n1, n2, n3;
+};
+
+int main() {
+    Alumno a;
+    cout << "Nombre: ";
+    cin >> a.nombre;
+    cout << "Ingrese tres notas: ";
+    cin >> a.n1 >> a.n2 >> a.n3;
+    float prom = (a.n1 + a.n2 + a.n3) / 3;
+    cout << "Promedio de " << a.nombre << " = " << prom;
+}
