@@ -1,0 +1,14 @@
+#include <iostream>
+using namespace std;
+
+int potencia(int base, int exp){
+    if(exp == 0) return 1;
+    return base * potencia(base, exp-1);
+}
+
+int main(){
+    int a,b;
+    cout<<"Base y exponente: ";
+    cin>>a>>b;
+    cout<<"Resultado: "<<potencia(a,b);
+}
