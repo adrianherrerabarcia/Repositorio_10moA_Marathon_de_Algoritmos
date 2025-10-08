@@ -1,0 +1,13 @@
+#include <iostream>
+#include <string>
+#include <algorithm>
+using namespace std;
+
+int main(){
+    string nombres[5];
+    cout<<"Ingrese 5 nombres:\n";
+    for(int i=0;i<5;i++) cin>>nombres[i];
+    sort(nombres, nombres+5);
+    cout<<"Ordenados:\n";
+    for(string n : nombres) cout<<n<<endl;
+}
