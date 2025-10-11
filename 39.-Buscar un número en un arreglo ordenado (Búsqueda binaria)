@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+
+int busquedaBinaria(int arr[], int n, int x){
+    int ini=0, fin=n-1;
+    while(ini<=fin){
+        int mid=(ini+fin)/2;
+        if(arr[mid]==x) return mid;
+        else if(arr[mid]<x) ini=mid+1;
+        else fin=mid-1;
+    }
+    return -1;
+}
+
+int main(){
+    int arr[]={2,4,6,8,10,12,14,16};
+    int x;
+    cout<<"Buscar: ";
+    cin>>x;
+    int pos=busquedaBinaria(arr,8,x);
+    if(pos!=-1) cout<<"Encontrado en posicion "<<pos;
+    else cout<<"No encontrado";
+}
