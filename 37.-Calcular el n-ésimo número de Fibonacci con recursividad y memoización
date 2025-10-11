@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+
+int fib(int n, int memo[]){
+    if(n<=1) return n;
+    if(memo[n]!=-1) return memo[n];
+    return memo[n] = fib(n-1,memo)+fib(n-2,memo);
+}
+
+int main(){
+    int n;
+    cout<<"n: ";
+    cin>>n;
+    int memo[100];
+    fill(memo,memo+100,-1);
+    cout<<"Fibonacci("<<n<<") = "<<fib(n,memo);
+}
