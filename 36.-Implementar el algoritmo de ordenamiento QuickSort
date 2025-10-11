@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+
+void quicksort(int a[], int izq, int der){
+    int i=izq, j=der, pivote=a[(izq+der)/2];
+    while(i<=j){
+        while(a[i]<pivote) i++;
+        while(a[j]>pivote) j--;
+        if(i<=j){
+            swap(a[i],a[j]);
+            i++; j--;
+        }
+    }
+    if(izq<j) quicksort(a,izq,j);
+    if(i<der) quicksort(a,i,der);
+}
+
+int main(){
+    int arr[]={34,7,23,32,5,62,3,90};
+    int n=8;
+    quicksort(arr,0,n-1);
+    cout<<"Ordenado: ";
+    for(int i=0;i<n;i++) cout<<arr[i]<<" ";
+}
