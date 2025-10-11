@@ -1,0 +1,19 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Cantidad de numeros: ";
+    cin >> n;
+    float arr[n], suma = 0, media, var = 0;
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+        suma += arr[i];
+    }
+    media = suma / n;
+    for (int i = 0; i < n; i++)
+        var += pow(arr[i] - media, 2);
+    float desviacion = sqrt(var / n);
+    cout << "Media: " << media << "\nDesviacion estandar: " << desviacion;
+}
