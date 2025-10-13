@@ -1,0 +1,13 @@
+#include <iostream>
+using namespace std;
+int main(){
+    int n, pos=0, neg=0, ceros=0;
+    for(int i=0;i<10;i++){
+        cout<<"Numero "<<i+1<<": "; cin>>n;
+        if(n>0) pos++;
+        else if(n<0) neg++;
+        else ceros++;
+    }
+    cout<<"Positivos: "<<pos<<", Negativos: "<<neg<<", Ceros: "<<ceros;
+    return 0;
+}
