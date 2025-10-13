@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+
+struct Nodo {
+    int valor;
+    Nodo *izq, *der;
+    Nodo(int v) : valor(v), izq(nullptr), der(nullptr) {}
+};
+
+Nodo* insertar(Nodo* raiz, int v) {
+    if (!raiz) return new Nodo(v);
+    if (v < raiz->valor) raiz->izq = insertar(raiz->izq, v);
+    else raiz->der = insertar(raiz->der, v);
+    return raiz;
+}
+
+void inorden(Nodo* raiz) {
+    if (!raiz) return;
+    inorden(raiz->izq);
+    cout << raiz->valor << " ";
+    inorden(raiz->der);
+}
+
+int main() {
+    Nodo* raiz = nullptr;
+    int n, x;
+    cout << "Cuantos numeros insertar: ";
+    cin >> n;
+    for (int i = 0; i < n; i++) {
+        cin >> x;
+        raiz = insertar(raiz, x);
+    }
+    cout << "Recorrido inorden: ";
+    inorden(raiz);
+}
