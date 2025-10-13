@@ -1,0 +1,9 @@
+#include <iostream>
+using namespace std;
+int main(){
+    int n;
+    cin>>n;
+    if(n>=0 && n<=9) cout<<"1 digito";
+    else if(n>=10 && n<=99) cout<<"2 digitos";
+    else cout<<"3 o mas digitos";
+}
