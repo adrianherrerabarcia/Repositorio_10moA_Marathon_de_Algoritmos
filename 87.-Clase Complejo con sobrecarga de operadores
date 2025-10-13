@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+class Complejo {
+public:
+    double real, imag;
+    Complejo(double r=0, double i=0): real(r), imag(i){}
+    Complejo operator+(const Complejo& c) {
+        return Complejo(real + c.real, imag + c.imag);
+    }
+    Complejo operator*(const Complejo& c) {
+        return Complejo(real*c.real - imag*c.imag, real*c.imag + imag*c.real);
+    }
+};
+
+int main() {
+    Complejo a(2, 3), b(1, 4);
+    Complejo c = a + b;
+    Complejo d = a * b;
+    cout << "Suma: " << c.real << " + " << c.imag << "i\n";
+    cout << "Producto: " << d.real << " + " << d.imag << "i\n";
+}
