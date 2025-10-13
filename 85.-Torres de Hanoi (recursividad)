@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+
+void hanoi(int n, char desde, char aux, char hasta) {
+    if (n == 1) {
+        cout << "Mover disco 1 de " << desde << " a " << hasta << endl;
+        return;
+    }
+    hanoi(n - 1, desde, hasta, aux);
+    cout << "Mover disco " << n << " de " << desde << " a " << hasta << endl;
+    hanoi(n - 1, aux, desde, hasta);
+}
+
+int main() {
+    int n;
+    cout << "Numero de discos: ";
+    cin >> n;
+    hanoi(n, 'A', 'B', 'C');
+}
