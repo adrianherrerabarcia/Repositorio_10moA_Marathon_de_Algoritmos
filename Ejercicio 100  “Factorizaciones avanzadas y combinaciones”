@@ -1,0 +1,22 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+void factorizar(int n, int start, vector<int> &actual, vector<vector<int>> &resultados) {
+    if (n == 1) {
+        resultados.push_back(actual);
+        return;
+    }
+    for (int i = start; i <= n; i++) {
+        if (n % i == 0) {
+            actual.push_back(i);
+            factorizar(n / i, i, actual, resultados);
+            actual.pop_back();
+        }
+    }
+}
+
+int main() {
+    int n = 100;
+    cout << "=== EJERCICIO 100: Factorizaciones avanzadas ===
