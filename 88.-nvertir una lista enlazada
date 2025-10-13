@@ -1,0 +1,40 @@
+#include <iostream>
+using namespace std;
+
+struct Nodo {
+    int valor;
+    Nodo* sig;
+};
+
+void insertar(Nodo*& cabeza, int v) {
+    Nodo* nuevo = new Nodo{v, cabeza};
+    cabeza = nuevo;
+}
+
+Nodo* invertir(Nodo* cabeza) {
+    Nodo* prev = nullptr;
+    Nodo* actual = cabeza;
+    while (actual) {
+        Nodo* sig = actual->sig;
+        actual->sig = prev;
+        prev = actual;
+        actual = sig;
+    }
+    return prev;
+}
+
+void imprimir(Nodo* cabeza) {
+    while (cabeza) {
+        cout << cabeza->valor << " ";
+        cabeza = cabeza->sig;
+    }
+}
+
+int main() {
+    Nodo* lista = nullptr;
+    insertar(lista, 1);
+    insertar(lista, 2);
+    insertar(lista, 3);
+    lista = invertir(lista);
+    imprimir(lista);
+}
