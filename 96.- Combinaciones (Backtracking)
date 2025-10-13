@@ -1,0 +1,25 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+void combinaciones(vector<int>& arr, int start, vector<int>& actual, int k) {
+    if (actual.size() == k) {
+        for (int v : actual) cout << v << " ";
+        cout << endl;
+        return;
+    }
+    for (int i = start; i < arr.size(); i++) {
+        actual.push_back(arr[i]);
+        combinaciones(arr, i + 1, actual, k);
+        actual.pop_back();
+    }
+}
+
+int main() {
+    int n, k;
+    cin >> n >> k;
+    vector<int> arr(n);
+    for (int i = 0; i < n; i++) arr[i] = i+1;
+    vector<int> actual;
+    combinaciones(arr, 0, actual, k);
+}
