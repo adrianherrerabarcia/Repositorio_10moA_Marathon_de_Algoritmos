@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+
+int busquedaBinaria(int arr[], int ini, int fin, int x) {
+    if (ini > fin) return -1;
+    int mid = (ini + fin) / 2;
+    if (arr[mid] == x) return mid;
+    if (x < arr[mid]) return busquedaBinaria(arr, ini, mid - 1, x);
+    return busquedaBinaria(arr, mid + 1, fin, x);
+}
+
+int main() {
+    int n, x;
+    cout << "Tamaño del arreglo: ";
+    cin >> n;
+    int arr[n];
+    cout << "Elementos ordenados: ";
+    for (int i = 0; i < n; i++) cin >> arr[i];
+    cout << "Buscar: "; cin >> x;
+    int pos = busquedaBinaria(arr, 0, n - 1, x);
+    if (pos != -1) cout << "Encontrado en indice " << pos;
+    else cout << "No encontrado";
+}
