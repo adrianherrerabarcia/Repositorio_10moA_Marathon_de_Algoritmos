@@ -1,0 +1,11 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main(){
+    float base, altura;
+    cout<<"Base y altura: "; cin>>base>>altura;
+    float area=(base*altura)/2;
+    float perimetro=base+2*sqrt(pow(base/2,2)+pow(altura,2));
+    cout<<"Area: "<<area<<", Perimetro aprox: "<<perimetro;
+    return 0;
+}
