@@ -1,0 +1,13 @@
+#include <iostream>
+using namespace std;
+int main(){
+    int n,mayor;
+    cout<<"Numero 1: ";
+    cin>>mayor;
+    for(int i=2;i<=5;i++){
+        cout<<"Numero "<<i<<": ";
+        cin>>n;
+        if(n>mayor) mayor=n;
+    }
+    cout<<"Mayor: "<<mayor;
+}
