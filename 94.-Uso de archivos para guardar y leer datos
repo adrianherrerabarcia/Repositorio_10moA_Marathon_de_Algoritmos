@@ -1,0 +1,17 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main() {
+    ofstream salida("datos.txt");
+    salida << "Hola mundo\n";
+    salida << "12345\n";
+    salida.close();
+
+    ifstream entrada("datos.txt");
+    string linea;
+    while (getline(entrada, linea)) {
+        cout << linea << endl;
+    }
+    entrada.close();
+}
