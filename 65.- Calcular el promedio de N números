@@ -1,0 +1,13 @@
+#include <iostream>
+using namespace std;
+int main(){
+    int n;
+    float num, suma=0;
+    cout<<"Cantidad: ";
+    cin>>n;
+    for(int i=1;i<=n;i++){
+        cin>>num;
+        suma+=num;
+    }
+    cout<<"Promedio: "<<suma/n;
+}
