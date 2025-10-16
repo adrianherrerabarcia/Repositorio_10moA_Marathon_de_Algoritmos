@@ -1,0 +1,15 @@
+#include <iostream>
+#include <string>
+using namespace std;
+int main(){
+    string s;
+    int cont=0;
+    cout<<"Frase: ";
+    getline(cin,s);
+    for(char c:s){
+        c=tolower(c);
+        if(c=='a'||c=='e'||c=='i'||c=='o'||c=='u') cont++;
+    }
+    cout<<"Vocales: "<<cont;
+    return 0;
+}
