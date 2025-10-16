@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std;
+int main(){
+    float a,b;
+    char op;
+    cout<<"Operacion (+ - * /): "; cin>>op;
+    cout<<"a y b: "; cin>>a>>b;
+    switch(op){
+        case '+': cout<<a+b; break;
+        case '-': cout<<a-b; break;
+        case '*': cout<<a*b; break;
+        case '/': cout<<a/b; break;
+        default: cout<<"Operacion invalida";
+    }
+    return 0;
+}
